@@ -6,6 +6,8 @@ import { indexPlacesSuccess, indexPlacesFailure } from '../shared/AutoDismissAle
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye } from '@fortawesome/free-solid-svg-icons'
 
+
+
 const eye = <FontAwesomeIcon icon={faEye} />
 
 // I'm going to declare a style object
@@ -51,6 +53,7 @@ const IndexPlaces = (props) => {
         return <p>No Spooky Places yet, go add some</p>
     }
 
+
     let placeCards
 
     if (places.length > 0) {
@@ -58,26 +61,26 @@ const IndexPlaces = (props) => {
             <Card key={place._id} style={{ width: '30%' }} className="m-2">
                 {/* <Card.Header className='header-name'>{place.name}</Card.Header> */}
                 <Card.Body className="card-body d-flex flex-column justify-content-end">
-
                     <p><img className="spooky-index-image" src={place.image}></img></p>
 
                     <Card.Text className="card-text">
                         <p className="header-name">{place.name}</p>
                         <Link to={`/spookyplaces/${place._id}`}>
-                             <Button className="eye-button" variant="dark">{eye}</Button>
+                            <Button className="eye-button" variant="dark">{eye}</Button>
                         </Link>
                     </Card.Text>
                 </Card.Body>
-            </Card>
+            </Card >
         ))
     }
+
 
     return (
         <>
             <h3 className="spooky-places-header">All the Spooky Places</h3>
             <div style={cardContainerLayout}>
                 {placeCards}
-            <a href="#top"><Button variant='dark'>Back to Top of Page</Button></a>
+                <a href="#top"><Button variant='dark'>Back to Top of Page</Button></a>
             </div>
         </>
     )
