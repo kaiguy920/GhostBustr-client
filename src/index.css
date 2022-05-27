@@ -237,6 +237,10 @@ code {
 
 }
 
+.card-title {
+  text-align: center;
+}
+
 .card-text {
   text-align: center;
 }
